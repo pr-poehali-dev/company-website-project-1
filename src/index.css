@@ -4,49 +4,65 @@
 
 @layer base {
   :root {
-    --background: 220 20% 6%;
-    --foreground: 210 20% 95%;
+    --ic-blue: #1e40af;
+    --ic-cyan: #06b6d4;
+    --ic-dark: #0f172a;
+    --ic-gold: #c8a165;
+    --ic-gray-text: #4b5563;
+    --ic-bg-section: #f3f4f6;
+    --ic-card-dark: #1e293b;
 
-    --card: 220 18% 9%;
-    --card-foreground: 210 20% 95%;
-
-    --popover: 220 18% 9%;
-    --popover-foreground: 210 20% 95%;
-
-    --primary: 195 100% 50%;
-    --primary-foreground: 220 20% 6%;
-
-    --secondary: 270 80% 60%;
-    --secondary-foreground: 210 20% 95%;
-
-    --muted: 220 15% 14%;
-    --muted-foreground: 215 15% 55%;
-
-    --accent: 330 100% 60%;
-    --accent-foreground: 210 20% 95%;
-
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 224 71% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 189 94% 43%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 189 94% 43%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 220 15% 16%;
-    --input: 220 15% 14%;
-    --ring: 195 100% 50%;
-
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 224 71% 40%;
     --radius: 0.75rem;
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 189 94% 43%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 40% 15%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 30% 20%;
+    --sidebar-ring: 189 94% 43%;
+  }
 
-    --neon-cyan: #00e5ff;
-    --neon-purple: #9b59ff;
-    --neon-pink: #ff2d7e;
-    --neon-green: #00ff87;
-
-    --sidebar-background: 220 20% 6%;
-    --sidebar-foreground: 210 20% 95%;
-    --sidebar-primary: 195 100% 50%;
-    --sidebar-primary-foreground: 220 20% 6%;
-    --sidebar-accent: 220 15% 14%;
-    --sidebar-accent-foreground: 210 20% 95%;
-    --sidebar-border: 220 15% 16%;
-    --sidebar-ring: 195 100% 50%;
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 0 0% 100%;
+    --card: 222 40% 10%;
+    --card-foreground: 0 0% 100%;
+    --popover: 222 40% 10%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 189 94% 43%;
+    --primary-foreground: 222 47% 6%;
+    --secondary: 224 71% 40%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 30% 15%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 189 94% 43%;
+    --accent-foreground: 222 47% 6%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 30% 18%;
+    --input: 220 30% 15%;
+    --ring: 189 94% 43%;
+    --ic-bg-section: #1e293b;
   }
 }
 
@@ -54,156 +70,202 @@
   * {
     @apply border-border;
   }
-
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
-    font-family: "Golos Text", sans-serif;
+    font-family: "Inter", sans-serif;
+    line-height: 1.7;
   }
-
   h1,
   h2,
-  h3 {
-    font-family: "Oswald", sans-serif;
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Poppins", sans-serif;
+    line-height: 1.25;
   }
 }
 
 @layer utilities {
-  .font-display {
-    font-family: "Oswald", sans-serif;
+  .font-heading {
+    font-family: "Poppins", sans-serif;
   }
-
   .font-body {
-    font-family: "Golos Text", sans-serif;
+    font-family: "Inter", sans-serif;
   }
 
-  .neon-text-cyan {
-    color: var(--neon-cyan);
-    text-shadow:
-      0 0 20px var(--neon-cyan),
-      0 0 40px rgba(0, 229, 255, 0.4);
+  .ic-gradient {
+    background: linear-gradient(135deg, #1e40af 0%, #06b6d4 100%);
+  }
+  .ic-gradient-text {
+    background: linear-gradient(135deg, #1e40af 0%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
-  .neon-text-pink {
-    color: var(--neon-pink);
-    text-shadow:
-      0 0 20px var(--neon-pink),
-      0 0 40px rgba(255, 45, 126, 0.4);
+  .pixel-bg {
+    background-image: radial-gradient(
+      circle,
+      rgba(6, 182, 212, 0.07) 1.5px,
+      transparent 1.5px
+    );
+    background-size: 28px 28px;
   }
-
-  .neon-border-cyan {
-    border-color: var(--neon-cyan);
-    box-shadow:
-      0 0 10px rgba(0, 229, 255, 0.3),
-      inset 0 0 10px rgba(0, 229, 255, 0.05);
-  }
-
-  .neon-btn {
-    background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
-    color: #0a0f1a;
-    font-weight: 700;
-    font-family: "Oswald", sans-serif;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
-  }
-
-  .neon-btn:hover {
-    box-shadow:
-      0 0 40px rgba(0, 229, 255, 0.6),
-      0 0 80px rgba(155, 89, 255, 0.3);
-    transform: translateY(-2px);
-  }
-
-  .neon-btn-outline {
-    border: 1.5px solid var(--neon-cyan);
-    color: var(--neon-cyan);
-    font-weight: 600;
-    font-family: "Oswald", sans-serif;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    background: transparent;
-    transition: all 0.3s ease;
-  }
-
-  .neon-btn-outline:hover {
-    background: rgba(0, 229, 255, 0.08);
-    box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
-  }
-
-  .grid-bg {
+  .grid-lines {
     background-image:
-      linear-gradient(rgba(0, 229, 255, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 229, 255, 0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
+      linear-gradient(rgba(30, 64, 175, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(30, 64, 175, 0.05) 1px, transparent 1px);
+    background-size: 48px 48px;
   }
 
-  .gradient-mesh {
-    background:
-      radial-gradient(
-        ellipse at 20% 50%,
-        rgba(0, 229, 255, 0.08) 0%,
-        transparent 50%
-      ),
-      radial-gradient(
-        ellipse at 80% 20%,
-        rgba(155, 89, 255, 0.1) 0%,
-        transparent 50%
-      ),
-      radial-gradient(
-        ellipse at 60% 80%,
-        rgba(255, 45, 126, 0.06) 0%,
-        transparent 50%
-      );
+  .ic-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(30, 64, 175, 0.05);
   }
-
-  .card-glow {
-    background: hsl(var(--card));
-    border: 1px solid hsl(var(--border));
+  .ic-card:hover {
+    border-color: #06b6d4;
+    box-shadow: 0 8px 32px rgba(30, 64, 175, 0.12);
+    transform: translateY(-4px);
+  }
+  .ic-card-dark {
+    background: #1e293b;
+    border: 1px solid rgba(6, 182, 212, 0.15);
+    border-radius: 12px;
     transition: all 0.3s ease;
   }
-
-  .card-glow:hover {
-    border-color: rgba(0, 229, 255, 0.4);
-    box-shadow:
-      0 0 30px rgba(0, 229, 255, 0.1),
-      0 20px 40px rgba(0, 0, 0, 0.3);
+  .ic-card-dark:hover {
+    border-color: rgba(6, 182, 212, 0.4);
+    box-shadow: 0 8px 32px rgba(6, 182, 212, 0.1);
     transform: translateY(-4px);
   }
 
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
+  .btn-primary {
+    background: linear-gradient(135deg, #1e40af 0%, #06b6d4 100%);
+    color: white !important;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(30, 64, 175, 0.22);
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover {
+    box-shadow: 0 8px 32px rgba(30, 64, 175, 0.38);
+    transform: translateY(-2px);
+    opacity: 0.95;
+  }
+  .btn-outline {
+    border: 2px solid #1e40af;
+    color: #1e40af !important;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    border-radius: 8px;
+    background: transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  .btn-outline:hover {
+    background: rgba(30, 64, 175, 0.06);
+    border-color: #06b6d4;
+    color: #06b6d4 !important;
+  }
+  .btn-white {
+    background: white;
+    color: #1e40af !important;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    border: none;
+    cursor: pointer;
+  }
+  .btn-white:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    transform: translateY(-2px);
   }
 
-  .animate-pulse-slow {
-    animation: pulse-slow 3s ease-in-out infinite;
+  .section-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 14px;
+    border-radius: 100px;
+    background: rgba(6, 182, 212, 0.1);
+    border: 1px solid rgba(6, 182, 212, 0.28);
+    color: #0891b2;
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
-  .animate-slide-up {
-    animation: slideUp 0.6s ease forwards;
+  .ic-input {
+    background: #f9fafb;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 8px;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    color: #1f2937;
+    transition: all 0.2s ease;
+    padding: 11px 14px;
+    width: 100%;
+    outline: none;
+  }
+  .ic-input:focus {
+    border-color: #06b6d4;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
+  }
+  .ic-input::placeholder {
+    color: #9ca3af;
   }
 
-  .stagger-1 {
-    animation-delay: 0.1s;
+  .guarantee-num {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #1e40af, #06b6d4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    flex-shrink: 0;
   }
-  .stagger-2 {
-    animation-delay: 0.2s;
+
+  .tag-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 500;
+    background: rgba(6, 182, 212, 0.08);
+    color: #0891b2;
+    border: 1px solid rgba(6, 182, 212, 0.2);
   }
-  .stagger-3 {
-    animation-delay: 0.3s;
+
+  .float-slow {
+    animation: floatSlow 5s ease-in-out infinite;
   }
-  .stagger-4 {
-    animation-delay: 0.4s;
-  }
-  .stagger-5 {
-    animation-delay: 0.5s;
-  }
-  .stagger-6 {
-    animation-delay: 0.6s;
+  .float-slow-2 {
+    animation: floatSlow 7s ease-in-out infinite reverse;
   }
 }
 
-@keyframes float {
+@keyframes floatSlow {
   0%,
   100% {
     transform: translateY(0px);
@@ -213,20 +275,10 @@
   }
 }
 
-@keyframes pulse-slow {
-  0%,
-  100% {
-    opacity: 0.4;
-  }
-  50% {
-    opacity: 0.8;
-  }
-}
-
-@keyframes slideUp {
+@keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(28px);
   }
   to {
     opacity: 1;
@@ -234,23 +286,36 @@
   }
 }
 
-@keyframes scroll-marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+.animate-fade-up {
+  animation: fadeInUp 0.65s ease forwards;
+}
+.delay-100 {
+  animation-delay: 0.1s;
+}
+.delay-200 {
+  animation-delay: 0.2s;
+}
+.delay-300 {
+  animation-delay: 0.3s;
+}
+.delay-400 {
+  animation-delay: 0.4s;
+}
+.delay-500 {
+  animation-delay: 0.5s;
 }
 
-.marquee-track {
-  animation: scroll-marquee 20s linear infinite;
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
 }
-
-.marquee-track:hover {
-  animation-play-state: paused;
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
 }
-
-html {
-  scroll-behavior: smooth;
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #06b6d4;
 }
