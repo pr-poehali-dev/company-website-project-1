@@ -113,6 +113,15 @@ export default function HomePage() {
                 <button onClick={() => navigate("/legaltech")} className="btn-white px-8 py-4 text-base">
                   Попробовать демо-бота
                 </button>
+                <button
+                  onClick={() => navigate("/pricing")}
+                  className="px-8 py-4 text-base font-heading font-semibold rounded-lg transition-all duration-200"
+                  style={{ border: "2px solid rgba(255,255,255,0.35)", color: "rgba(255,255,255,0.85)", background: "transparent" }}
+                  onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.1)"; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = "transparent"; }}
+                >
+                  Прайс-лист
+                </button>
               </div>
             </Fade>
             <Fade delay={0.4}>

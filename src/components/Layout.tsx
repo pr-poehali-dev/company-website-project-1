@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 import ContactModal from "@/components/ContactModal";
+import Logo from "@/components/Logo";
 
 const navItems = [
   {
@@ -23,6 +24,7 @@ const navItems = [
       { label: "Гибридный бот для селлеров", href: "/hybrid-bot-marketplace" },
     ],
   },
+  { label: "Прайс", href: "/pricing" },
   { label: "Кейсы", href: "/keisy" },
   { label: "Блог", href: "/blog" },
   { label: "О компании", href: "/o-nas" },
@@ -73,15 +75,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           {/* Logo */}
           <button
             onClick={() => go("/")}
-            className="flex items-center gap-2 flex-shrink-0"
+            className="flex items-center flex-shrink-0"
           >
-            <div className="w-8 h-8 rounded-lg ic-gradient flex items-center justify-center">
-              <Icon name="TrendingUp" size={15} className="text-white" />
-            </div>
-            <div className="font-heading font-bold text-[14px] leading-tight hidden sm:block">
-              <span style={{ color: "#1E40AF" }}>ИНТЕЛЛЕКТ</span>{" "}
-              <span style={{ color: "#06B6D4" }}>КОНСАЛТИНГ</span>
-            </div>
+            <Logo size={36} variant="default" showText={true} textSize="sm" />
           </button>
 
           {/* Desktop nav */}
@@ -240,14 +236,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             {/* Col 1 */}
             <div>
-              <button onClick={() => go("/")} className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 rounded-lg ic-gradient flex items-center justify-center">
-                  <Icon name="TrendingUp" size={14} className="text-white" />
-                </div>
-                <div className="font-heading font-bold text-sm">
-                  <span style={{ color: "#60A5FA" }}>ИНТЕЛЛЕКТ</span>{" "}
-                  <span style={{ color: "#22D3EE" }}>КОНСАЛТИНГ</span>
-                </div>
+              <button onClick={() => go("/")} className="flex items-center mb-4">
+                <Logo size={32} variant="white" showText={true} textSize="sm" />
               </button>
               <p className="font-body text-xs text-slate-400 leading-relaxed mb-5">
                 Цифровые решения для e-commerce: от стратегии до автоматизации и AI-дизайна.
